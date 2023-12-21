@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        #box{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="fw-bold" id="formm">
+            Name <br> <input type="text" id="inname" placeholder="Enter Your Name"> <br>
+            Highschool Board Name
+            <select id="sboard">
+                <option selected disabled>-- Select --</option>
+                <option>UP Board</option>
+                <option>CBSE Board</option>
+            </select><br>
+            Intermediate Board Name
+            <select id="siboard" class="my-2">
+                <option selected disabled>-- Select --</option>
+                <option>UP Board</option>
+                <option>CBSE Board</option>
+            </select><br>
+            Enter Graduation Name <br>
+            <input type="text" id="gsname" placeholder="BA/B.sc"><br>
+            Enter University Name <br>
+            <input type="text" id="gsuniversity" placeholder="xyz University"><br>
+            Enter Father Name <br>
+            <input type="text" id="fsname" placeholder="Enter Your Father Name"><br>
+            Enter Mother Name <br>
+            <input type="text" id="msname" placeholder="Enter Your Mother Name"><br>
+            Date Of Birth <br>
+            <input type="date" id="sdob" class="my-2"><br>
+            Gender 
+            <select id="gender">
+                <option selected disabled>--Select--</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Transgender</option>
+            </select> <br>
+            Village <br>
+            <input type="text" id="svlg"><br>
+            Post <br>
+            <input type="text" id="spost"><br>
+            Tehsil <br>
+            <input type="text" id="steh"><br>
+            District <br>
+            <input type="text" id="sdist"><br>
+            Pincode <br>
+            <input type="number" id="spin"><br>
+            <button class="btn btn-danger my-2" onclick="demo()">Create Resume</button>
+        </div>
+        <div class="row" id="box">
+            <div class="col-sm-12">
+                <div id="res">
+                <p class="text-center fw-bold fs-5">RESUME</p>
+                <p id="cname" class="fw-bold fs-4"></p><hr>
+                <p> <span class="fw-bold">Objective :</span> I want to relish working in a premier organization with dedication and determination, seeking with total commitment a challenging and responsible position that offers bright opportunities and then add value to my organization and myself.</p>
+                <p class="fw-bold">Educational Qualifications :-</p>
+                    <li> Highschool from <span id="high">  </span></li>
+                    <li> Intermediate from <span id="inter">  </span></li>
+                    <li> Graduation ( <span id="gname"></span> ) from <span id="guniversity">  </span></li><br>
+                <p class="fw-bold">Personal Details :-</p>
+                <ul type="circle">
+                <li class="fw-bold"> Father Name <span id="fname" class="fw-normal">  </span></li>
+                <li class="fw-bold"> Mother Name <span id="mname" class="fw-normal">  </span></li>
+                <li class="fw-bold"> Date of Birth <span id="dob" class="fw-normal"></span></li>
+                <li class="fw-bold"> Sex <span id="sex" class="fw-normal"></span></li>
+                <li class="fw-bold"> Nationality  <span id="" class="fw-normal">Indian</span></li>
+                <li class="fw-bold"> Known Language <span id="" class="fw-normal">Hindi, English</span></li>
+                </ul>
+                <br>
+                <p class="fw-bold">Address Details :-</p>
+                <p class="fw-bold"> Village <span id="vlg" class="fw-normal"></span></p>
+                <p class="fw-bold"> Post <span id="post" class="fw-normal"></span></p>
+                <p class="fw-bold"> Tehsil <span id="teh" class="fw-normal"></span></p>
+                <p class="fw-bold"> District <span id="dist" class="fw-normal"></span></p>
+                <p class="fw-bold"> Pincode <span id="pincode" class="fw-normal"></span></p>
+                <p class="fw-bold">Declaration :-</p>
+                <p>I hereby declare that all the above information given below is true to the best of my knowledge and belief.</p>
+                <p>Date :</p>
+                <p>Place :</p>
+                <p id="spname" class="text-end pe-3 fw-bold"></p>
+                </div>
+                <button onclick="pri()" class="btn btn-danger">Print</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function demo()
+        {
+            formm.style.display="none"
+            box.style.display="block"
+            cname.innerText=inname.value
+            spname.innerText=inname.value
+            high.innerText=sboard.value
+            inter.innerText=siboard.value
+            gname.innerText=gsname.value
+            guniversity.innerText=gsuniversity.value
+            fname.innerText=fsname.value
+            mname.innerText=msname.value
+            dob.innerText=sdob.value
+            sex.innerText=gender.value
+            vlg.innerText=svlg.value
+            post.innerText=spost.value
+            teh.innerText=steh.value
+            dist.innerText=sdist.value
+            pincode.innerText=spin.value
+        }
+        function pri()
+        {
+            var b=document.body.innerHTML
+            document.body.innerHTML=res.innerHTML
+            print()
+            document.body.innerHTML=b
+        }
+    </script>
+</body>
+</html>
